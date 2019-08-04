@@ -15,9 +15,9 @@ mongoose.connect(keys.MONGO_URI, { useNewUrlParser: true })
 const app = express();
 
 app.use(cookieSession({
-    // 30 days, 24 hours, 60 mins, 60 seconds, 1000 milliseconds == 30 days // the total is based off milliseconds
+    // 30 days, 24 hours, 60 mins, 60 seconds, 1000 milliseconds == 30 days // the total is based on milliseconds
     maxAge: 30 * 24 * 60 * 60 * 1000,
-    keys: [keys.cookieKey]
+    keys: [keys.COOKIE_KEY]
 }));
 app.use(passport.initialize());
 app.use(passport.session());
